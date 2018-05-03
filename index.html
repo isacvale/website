@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>isacvale</title>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div id="background-parallax"></div>
+    <header>
+        <div id="navbar">
+            <h1><span>isac</span><span>vale</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#" target="_blank">About me</a></li>
+                    <li><a href="#" target="_blank">Portfolio</a></li>
+                    <li><a href="#" target="_blank">Contact</a></li>
+                    <li><a href="#" target="_blank">ptBR</a></li>
+                    <li><a href="#" target="_blank" class="last-item"><i class="fas fa-print"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div id="greeting">
+        <div class="loader"></div>
+        
+        <div class="load_anim">
+            <div class="load_jumper_shadow"></div>
+            <div class="jumper-align">
+                <div class="load_jumper"></div>
+            </div>
+            <p><span>lo</span><span>a</span><span>ding</span></p>
+        </div>
+    </div>
+    
+    <section id="about-me">
+        <div class="styleone">
+            <img class="portrait" src="img/portrait.svg" alt="TODO">
+            <h2>About me</h2>
+            <p>I’m a designer. Sometimes it is difficult to set boundaries to what it is that I design, from buildings, to magazines, to games. But most and foremost, my focus currently lies on web design. It allows the perfect combination of two passions: aesthetics and coding. It is also intrinsically borderless – a website can be a magazine, a game, an art gallery. It can also be a full and unique aesthetic experience, and that is what drives me to create great design.</p>
+            <p>I graduated from the University of Brasilia in architecture and urban planning. Soon, however, I drifted to game design and developed a taste for coding and technology. Then illustration, and graphic design, then I started my masters in aesthetics. Having tasted the coding and IT as a game designer and developer, however, I longed for the long hours of solving tech puzzles. And then, finally, I found web design and development, where all my previous knowledge and experience converged. Be it of image or code, I’m a designer.</p>
+            <p class="shout"><span>web development</span> <span>+</span> <span>graphic design</span></p>
+        </div>
+        <div class="styletwo">
+            <h2>Education</h2>
+            <p>My formal education in architecture and urban planning provided a solid base for design. After that, I taught myself many skills for practical reasons: from typography to programming games in python. As I recently decided to focus on web design, I took advantage of this new era of on-line courses. Listing them here, I believe, will allow you a good sense of my skills set on the field.</p>
+            <p>Feel free to click on the course or institution to be forwarded to their websites.</p>
+            
+            
+            <div class="table-caption">
+                <h3>online courses</h3>
+                <div>
+                    <p>grey means completed</p>
+                </div
+                ><div>
+                    <p>yellow means enrolled</p>
+                </div>
+                <div class="key key1"></div><div class="key key2"></div>
+            </div>
+            
+            <div id="table-target"></div>
+            
+            <template id="table-head">
+            <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="specialization-name">Web Design for Everybody</th>
+                    </tr>
+                    <tr>
+                        <th class="specialization-institution">University of Michigan</th>
+                        <th><span class="specialization-hours">70h</span></th>
+                    </tr>
+                         <!--<th class="specialization-hours" colspan="1"><span></span>470h</th>-->
+                    
+                    
+                </thead>
+                
+                <tbody><!--
+                    <tr><td>Introduction to HTML5</td></tr>
+                    <tr><td>Introduction to CSS3</td></tr>
+                    <tr><td>Interactivity with JavaScript</td></tr>
+                    <tr><td>Advanced Styling with Responsive Design</td></tr>
+                    <tr><td class="enrolled">Web Design for Everybody Capstone</td></tr>-->
+                </tbody>
+            </table>
+            </div>
+            </template>
+            
+            <template id="table-body">
+                <tr><td>Introduction to HTML5</td></tr>
+            </template>
+            
+            
+            
+        </div>
+        
+        
+        <div class="stylethree">
+            <h2>Contact</h2>
+            <ul class="contact-list">
+                <li><i class="fab fa-github"></i><a href="#" target = "_blank">github</a></li>
+                <li><i class="fab fa-stack-overflow"></i><a href="#" target = "_blank">stackoverflow</a></li>
+                <li><i class="fab fa-codepen"></i><a href="#" target = "_blank">codepen</a></li>
+                <li><i class="fab fa-deviantart"></i><a href="#" target = "_blank">deviantart</a></li>
+                <li><img src="img/openclipart.svg" alt="A scissor's silhouette, the icon of openclipart."><a href="#" target = "_blank">openclipart</a></li>
+            </ul>
+            <p>I'm not much of social media buff, so if you wish to contact me, the easiest way is good ol' email: <span>isac.dvo+web@gmail.com</span></p>
+        </div>
+        <!--<div id="end"></div>-->
+    </section>
+    
+    
+    <footer>
+        <nav>
+            <!--<p style="color:white">Someone here?</p>-->
+            <ul>
+                <li><a href="#" target="_blank"><i class="fas fa-male"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fas fa-folder"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fas fa-envelope"></i></a></li>
+                <li><a href="#" target="_blank">ptBR</a></li>
+                <li><a href="#" target="_blank" class="last-item"><i class="fas fa-print"></i></a></li>
+            </ul>
+        </nav>
+    </footer>
+    
+    <template id="newcourse">
+        <div class="course-container">
+        </div>
+    </template>
+    
+    <template id="table-title">
+        <tr><th class="specialization-name">specialization</th><th class="institution-name">institution</th><td class="specialization-hours">hours</td></tr>
+    </template>
+    
+    <template id="table-course">
+        <tr><td class="course-name">course</td></tr>
+    </template>
+    
+    
+
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="code/script.js"></script>
+<script type="text/javascript" src="style/style-script.js"></script>
+    
+<script>
+    $(document).ready(function(){
+    doneLoadingCode();
+    doneLoadingStyle();
+});
+</script>
+</body>
+</html>

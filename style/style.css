@@ -1,0 +1,699 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great|Montserrat:200,300,400,500,800");
+a, html, body, table thead .specialization-name, table thead .specialization-institution, table tbody td, .specialization-hours {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #171717; }
+
+header li a, footer > nav ul li a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2d2d2d; }
+
+.shout, h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 200;
+  line-height: 26px;
+  color: #747474;
+  margin: 0;
+  padding: 0; }
+
+.shout {
+  font-weight: 800;
+  color: #171717; }
+
+h3 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0; }
+
+h3 {
+  color: #2d2d2d;
+  text-align: left; }
+
+.shout {
+  margin: 35px 0; }
+  .shout span:nth-child(1) {
+    color: #747474; }
+  .shout span:nth-child(2) {
+    color: #fff;
+    font-size: 2em;
+    position: relative;
+    top: 0.2em; }
+  .shout span:nth-child(3) {
+    color: #13a76b; }
+
+a {
+  font-weight: 800;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 3px 8px;
+  border-radius: 3px; }
+
+a:hover {
+  background-color: rgba(0, 0, 0, 0.4); }
+
+/* UNIVERSALS AND CLEANUP ---------------------------------------------------------*/
+html, body {
+  margin: 0;
+  padding: 0; }
+
+#background-parallax {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/bg-texture-custom-sm.png");
+  background-color: #ffe401; }
+
+section, header div {
+  width: 82vw;
+  margin: 0 auto; }
+
+/* SECTIONS AND BUILDING BLOCKS ----------------------------------------------------*/
+section {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: white;
+  min-height: calc( 100vh - 60px );
+  padding: 0;
+  margin: 0 auto; }
+
+.styleone {
+  background-color: #e5dada;
+  padding: 26px 4vw; }
+  .styleone h2 {
+    color: #13a76b; }
+
+.styletwo {
+  background-color: #fff;
+  padding: 26px 4vw; }
+  .styletwo h2 {
+    color: #13a76b; }
+
+.stylethree {
+  background-color: #13a76b;
+  padding: 26px 4vw; }
+  .stylethree h2 {
+    color: #fff; }
+
+/* GREETING (loading page) ---------------------------------------------------------*/
+#greeting {
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffe401;
+  position: relative; }
+  #greeting p {
+    margin: 85px 0 0;
+    padding: 0;
+    font-size: 40px;
+    color: #f7f7d0;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 36px;
+    /*span{
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+    }
+    span:first-child{
+        animation-name: span1-anim;
+    }
+    span:nth-child(2){
+        animation-name: span2-anim;
+    }
+    span:last-child{
+        animation-name: span3-anim;
+    }*/ }
+
+.loader {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../img/load-texture-custom-sm.png");
+  background-color: #ffe401;
+  background-position: right;
+  position: absolute;
+  /*animation-name: loading;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;*/ }
+
+.load_anim {
+  position: relative;
+  text-align: center;
+  padding-top: calc( 50vh - 60px ); }
+
+.jumper-align {
+  position: absolute;
+  left: 50%; }
+
+.load_jumper {
+  height: 65px;
+  width: 65px;
+  background-color: #f7f7d0;
+  margin: 0 auto;
+  position: relative;
+  left: -50%;
+  /*animation-name: jump-square;
+  animation-delay: 0.5s;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 3;*/ }
+
+.load_jumper_shadow {
+  height: 30px;
+  width: 75px;
+  background-color: black;
+  opacity: 0.3;
+  margin: 0 auto;
+  position: relative;
+  bottom: -80px;
+  /*animation-name: jump-shadow;
+  animation-delay: 0.5s;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 3;*/ }
+
+/* HEADER (nav bar) -----------------------------------------------------------*/
+header {
+  background-color: #171717; }
+  header div {
+    display: none;
+    height: 60px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 4vw;
+    padding-right: 4vw; }
+    header div h1 {
+      display: inline-block;
+      margin: 20px 0 0;
+      padding: 0;
+      font-family: 'Fredericka the Great', cursive;
+      font-weight: 400;
+      font-size: 36px; }
+      header div h1 span:first-child {
+        color: #f7f7d0; }
+      header div h1 span:last-child {
+        color: #13a76b; }
+  header nav {
+    margin: 0;
+    padding: 0;
+    float: right; }
+  header ul {
+    color: #f7f7d0;
+    margin: 12px 0; }
+  header li {
+    display: inline-block;
+    position: relative; }
+    header li a {
+      padding: 2px 5px;
+      color: #f7f7d0;
+      margin: 2px 5px;
+      text-decoration: none;
+      border: 2px solid transparent; }
+    header li a:hover {
+      border: 2px solid #13a76b;
+      border-radius: 5px; }
+    header li a.last-item {
+      margin: 2px 0 2px 5px; }
+    header li a.last-item:hover {
+      border: none;
+      color: #ffe401; }
+  header li + li::before {
+    content: " ● "; }
+  header i {
+    font-size: 2em;
+    position: relative;
+    bottom: -8px; }
+  header img {
+    height: 2em;
+    position: relative;
+    bottom: -9px; }
+
+/* ABOUT ME -----------------------------------------------------------------*/
+#about-me {
+  display: none; }
+
+.portrait {
+  width: 26vw;
+  float: right;
+  margin: -36px -6vw 5px 5px;
+  max-width: 512px; }
+
+.contact-list {
+  position: relative;
+  padding: 0; }
+  .contact-list i {
+    display: inline-block;
+    position: relative;
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.4);
+    bottom: -6px;
+    padding: 0 6px; }
+  .contact-list li {
+    display: inline-block; }
+    .contact-list li a {
+      text-decoration: none;
+      color: #fff; }
+  .contact-list img {
+    display: inline-block;
+    position: relative;
+    width: 2em;
+    bottom: -6px;
+    padding: 0 4px 0 0;
+    opacity: 0.4; }
+
+.contact-list + p {
+  color: #fff;
+  margin-bottom: 3vh; }
+  .contact-list + p span {
+    font-weight: 500; }
+
+/* FOOTER ---------------------------------------------------------------*/
+footer > nav {
+  display: none;
+  height: 60px;
+  width: 100vw;
+  background-color: #2d2d2d;
+  color: #f7f7d0;
+  position: fixed;
+  bottom: 0;
+  font-size: 12px;
+  z-index: 3; }
+  footer > nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /*li+li::before{
+        content: "|";
+    }*/ }
+    footer > nav ul li {
+      display: inline-block;
+      position: relative; }
+      footer > nav ul li a {
+        padding: 2px 5px;
+        color: #f7f7d0;
+        margin: 2px 5px;
+        text-decoration: none;
+        border: 2px solid transparent; }
+        footer > nav ul li a i {
+          font-size: 2em;
+          position: relative;
+          bottom: -8px; }
+        footer > nav ul li a img {
+          height: 2em;
+          position: relative;
+          bottom: -9px; }
+      footer > nav ul li a:hover {
+        border: 2px solid #13a76b;
+        border-radius: 5px; }
+      footer > nav ul li a.last-item {
+        margin: 2px 0 2px 5px; }
+      footer > nav ul li a.last-item:hover {
+        border: none;
+        color: #ffe401; }
+
+/* TABLES ---------------------------------------------------------------*/
+#end {
+  height: 500px;
+  width: 10px; }
+
+.table-caption {
+  line-height: 90%;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #fff; }
+  .table-caption h3 {
+    padding: 12px 0 16px; }
+  .table-caption div {
+    display: inline-block;
+    margin: 0;
+    width: 50%;
+    color: #555f33; }
+  .table-caption p {
+    display: inline-block;
+    width: 50%;
+    margin: 10px 0 5px; }
+  .table-caption .key {
+    margin: 3px 0;
+    height: 5px;
+    display: inline-block;
+    width: 50%; }
+  .table-caption div:first-child {
+    text-align: right;
+    color: #096643; }
+
+.key1, .key2 {
+  margin: 3px;
+  height: 5px;
+  width: 100%; }
+
+.key1 {
+  background-color: grey; }
+
+.key2 {
+  background-color: yellow; }
+
+table, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border-spacing: 0; }
+
+.table-container {
+  width: 100%;
+  display: inline-block;
+  position: relative; }
+
+table {
+  width: 100%;
+  empty-cells: show;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px white solid;
+  position: relative; }
+  table thead {
+    background-color: #332b2b;
+    overflow: hidden; }
+    table thead th {
+      text-align: left;
+      font-weight: 500; }
+    table thead .specialization-name {
+      font-size: 16px;
+      line-height: 80%;
+      padding: 28px 4px 0;
+      color: #fff; }
+    table thead .specialization-institution {
+      font-size: 12px;
+      line-height: 80%;
+      padding: 4px 4px 8px;
+      color: #c5adad; }
+  table tbody {
+    background-color: #e5dada; }
+    table tbody td {
+      font-weight: 300;
+      font-size: 14px;
+      padding: 5px 4px; }
+    table tbody .enrolled {
+      background-color: #f7f7d0; }
+    table tbody td {
+      border-bottom: 1px #cdc3c3 solid; }
+    table tbody tr:last-child > td {
+      border-bottom: none;
+      padding-bottom: 20px; }
+
+.specialization-hours {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  font-size: 90px;
+  font-weight: 800;
+  line-height: 80%;
+  color: #e5dada;
+  opacity: 0.22;
+  top: 0;
+  right: 0;
+  margin-top: -4px;
+  margin-right: -4px;
+  z-index: 1; }
+
+/* ANIMATIONS -----------------------------------------------------------*/
+/* All CSS animation is concentrated on this file in order to facilitate fine tuning. The drawback is that the selectors below are replicated in the main css (style.css), although not thr rules.*/
+/* ELEMENTS ---------------------------*/
+#greeting p span {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out; }
+#greeting p span:first-child {
+  -webkit-animation-name: span1-anim;
+  animation-name: span1-anim; }
+#greeting p span:nth-child(2) {
+  -webkit-animation-name: span2-anim;
+  animation-name: span2-anim; }
+#greeting p span:last-child {
+  -webkit-animation-name: span3-anim;
+  animation-name: span3-anim; }
+
+.loader {
+  -webkit-animation-name: loading;
+  animation-name: loading;
+  -webkit-animation-duration: 2.8s;
+  animation-duration: 2.8s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out; }
+
+.load_jumper {
+  -webkit-animation-name: jump-square;
+  animation-name: jump-square;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3; }
+
+.load_jumper_shadow {
+  -webkit-animation-name: jump-shadow;
+  animation-name: jump-shadow;
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: 3;
+  animation-iteration-count: 3; }
+
+/* ANIMATIONS ---------------------------*/
+/*Animation: loading bar*/
+@-webkit-keyframes loading {
+  0% {
+    width: 0; }
+  46% {
+    width: 0vw; }
+  56% {
+    width: 33vw; }
+  63% {
+    width: 33vw; }
+  73% {
+    width: 66vw; }
+  80% {
+    width: 66vw; }
+  90% {
+    width: 100vw; }
+  /*95% {width:60vw;}*/
+  100% {
+    width: 100vw; } }
+@keyframes loading {
+  0% {
+    width: 0; }
+  46% {
+    width: 0vw; }
+  56% {
+    width: 33vw; }
+  63% {
+    width: 33vw; }
+  73% {
+    width: 66vw; }
+  80% {
+    width: 66vw; }
+  90% {
+    width: 100vw; }
+  /*95% {width:60vw;}*/
+  100% {
+    width: 100vw; } }
+/*Animation: jumping square*/
+@-webkit-keyframes jump-square {
+  0% {
+    bottom: 0; }
+  10% {
+    width: 80px;
+    height: 50px;
+    bottom: 0; }
+  45% {
+    width: 50px;
+    height: 80px;
+    bottom: 70px;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  80% {
+    width: 50px;
+    height: 80px;
+    bottom: 0; }
+  90% {
+    width: 80px;
+    height: 50px; }
+  100% {
+    width: 65px;
+    height: 65px;
+    bottom: 0; } }
+@keyframes jump-square {
+  0% {
+    bottom: 0; }
+  10% {
+    width: 80px;
+    height: 50px;
+    bottom: 0; }
+  45% {
+    width: 50px;
+    height: 80px;
+    bottom: 70px;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  80% {
+    width: 50px;
+    height: 80px;
+    bottom: 0; }
+  90% {
+    width: 80px;
+    height: 50px; }
+  100% {
+    width: 65px;
+    height: 65px;
+    bottom: 0; } }
+/*Animation: shadow from jumping*/
+@-webkit-keyframes jump-shadow {
+  10% {
+    width: 75px; }
+  45% {
+    width: 25px;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  80% {
+    width: 25px; }
+  90% {
+    width: 75px; } }
+@keyframes jump-shadow {
+  10% {
+    width: 75px; }
+  45% {
+    width: 25px;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  80% {
+    width: 25px; }
+  90% {
+    width: 75px; } }
+/*Animation: color correction*/
+@-webkit-keyframes span1-anim {
+  0% {
+    color: #2d2d2d;
+    font-size: 0px;
+    opacity: 0; }
+  35% {
+    font-size: 0px;
+    opacity: 0; }
+  40% {
+    font-size: 52px;
+    opacity: 1.0; }
+  45% {
+    color: #2d2d2d;
+    font-size: 40px;
+    opacity: 1.0; } }
+@keyframes span1-anim {
+  0% {
+    color: #2d2d2d;
+    font-size: 0px;
+    opacity: 0; }
+  35% {
+    font-size: 0px;
+    opacity: 0; }
+  40% {
+    font-size: 52px;
+    opacity: 1.0; }
+  45% {
+    color: #2d2d2d;
+    font-size: 40px;
+    opacity: 1.0; } }
+@-webkit-keyframes span2-anim {
+  0% {
+    color: #2d2d2d;
+    font-size: 0px;
+    opacity: 0; }
+  45% {
+    color: #2d2d2d; }
+  63% {
+    font-size: 0px;
+    opacity: 0; }
+  67% {
+    font-size: 52px;
+    opacity: 1.0; }
+  71% {
+    font-size: 40px;
+    opacity: 1.0; } }
+@keyframes span2-anim {
+  0% {
+    color: #2d2d2d;
+    font-size: 0px;
+    opacity: 0; }
+  45% {
+    color: #2d2d2d; }
+  63% {
+    font-size: 0px;
+    opacity: 0; }
+  67% {
+    font-size: 52px;
+    opacity: 1.0; }
+  71% {
+    font-size: 40px;
+    opacity: 1.0; } }
+@-webkit-keyframes span3-anim {
+  0% {
+    font-size: 0px;
+    opacity: 0; }
+  80% {
+    font-size: 0px;
+    opacity: 0; }
+  84% {
+    font-size: 52px;
+    opacity: 1.0; }
+  88% {
+    font-size: 40px;
+    opacity: 1.0; } }
+@keyframes span3-anim {
+  0% {
+    font-size: 0px;
+    opacity: 0; }
+  80% {
+    font-size: 0px;
+    opacity: 0; }
+  84% {
+    font-size: 52px;
+    opacity: 1.0; }
+  88% {
+    font-size: 40px;
+    opacity: 1.0; } }
+/*Animation: section load*/
+@-webkit-keyframes section-appear {
+  from {
+    opacity: 0;
+    background-color: white; }
+  to {
+    opacity: 1;
+    background-color: blue; } }
+@keyframes section-appear {
+  from {
+    opacity: 0;
+    background-color: white; }
+  to {
+    opacity: 1;
+    background-color: blue; } }
+/* MEDIA QUERIES --------------------------------------------------------*/
+@media only screen and (max-width: 812px) {
+  header nav > ul {
+    display: none; }
+
+  footer nav {
+    display: block;
+    text-align: center; } }

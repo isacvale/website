@@ -1,0 +1,144 @@
+#end{
+    height: 500px;
+    width: 10px;
+}
+$color10: #096643;
+$color11: #555f33;
+$color12: #332b2b;
+
+.table-caption{
+    
+    line-height: 90%;
+    text-align: center;
+    position: sticky;
+    top:0;
+    z-index: 2;
+    background-color: $color7;
+    h3{
+        padding: 12px 0 16px;
+        //margin: 48px 0 16px;
+    }
+    div{
+        display: inline-block;
+        margin:0;
+        width:50%;
+        color: $color11;
+    }
+    p{
+        display: inline-block;
+        width:50%;
+        margin:10px 0 5px;
+    }
+    .key{
+        margin: 3px 0;
+        height: 5px;
+        display: inline-block;
+        width:50%;
+    }
+    div:first-child{
+        text-align: right;
+        color: $color10;
+    }
+}
+
+%keys{
+    margin: 3px;
+    height: 5px;
+    width: 100%;
+}
+.key1{
+    @extend %keys;
+    background-color: grey;
+}
+.key2{
+    @extend %keys;
+    background-color: yellow;
+}
+
+
+//Title font
+table, tr, th, td{
+    margin:0;
+    padding: 0;
+    border-spacing: 0;
+}
+
+
+//Tables
+.table-container{
+    width:100%;
+    //border: 2px purple dotted;
+    display:inline-block;
+    position: relative;
+}
+table{
+    width:100%;
+    empty-cells: show;
+    box-sizing: border-box;
+    border: 1px white solid;
+    position: relative;
+    thead{
+        background-color: $color12;
+        overflow: hidden;
+        th{
+            text-align: left;
+            font-weight: 500;
+        }
+        .specialization-name{
+            @extend %fonts-common;
+            font-size: 16px;
+            line-height: 80%;
+            padding: 28px 4px 0;
+            color: $color7;
+        }
+        .specialization-institution{
+            @extend %fonts-common;
+            font-size: 12px;
+            line-height: 80%;
+            padding: 4px 4px 8px;
+            color: darken( $color6, 15%);
+        }
+    }
+    tbody{
+        background-color: $color6;
+        td{
+            @extend %fonts-common;
+            font-weight: 300;
+            font-size: 14px;
+            padding: 5px 4px;
+        }
+        .enrolled{
+        background-color: $color3;
+        }
+        td{
+            border-bottom: 1px lighten( $color12, 60%) solid;
+        }
+        tr:last-child>td{
+            border-bottom: none;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+
+
+.specialization-hours{
+            display: inline-block;
+    margin:0;
+    padding:0;
+            position:absolute;
+            @extend %fonts-common;
+            font-size: 90px;
+            font-weight: 800;
+    line-height: 80%;
+            color: $color6;
+            //color: orange;
+            opacity: 0.22;//0.14;
+            top: 0;
+            right: 0;
+    margin-top: -4px;
+    margin-right:-4px;
+            //width:100px;
+            //border: 1px olive dashed;
+    z-index: 1;
+        }

@@ -1,0 +1,31 @@
+/* GREETING -----------*/
+#greeting{
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffe401;
+    position: relative;
+}
+.loader{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("bg-texture-custom-sm.png");
+    background-color: #ffe401;
+    background-position: right;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    position: absolute;
+    border: 40px solid pink;
+}
+.load_anim{
+    position: relative;
+    text-align: center;
+    padding-top: calc( 50vh - 60px );
+    /*width: 200px;
+    margin: auto;*/
+}
+/*-- greeting animations -----------*/
+@keyframes loading{
+    0%  {width:0;}
+    100% {width:100vw;}
+}

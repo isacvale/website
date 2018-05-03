@@ -1,0 +1,417 @@
+///* IMPORTS --------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Montserrat:200,300,400,500,800');
+
+///* BASIC VARIABLES ------------------------------------------------*/
+$bg-image: url( "../img/bg-texture-custom-sm.png" );
+$load-image: url( "../img/load-texture-custom-sm.png" );
+$container-width: 82vw; //This is for fine tuning the appearence. Once set, leave it.
+$base-padding: 4vw; //This is for fine tuning the appearence. Once set, leave it.
+
+///* COLORS ----------------------------------------------------------*/
+//TODO: simplify color scheme. Five colors should suffice.
+$color1: #2d2d2d;
+$color2: #ffe401;
+$color3: #f7f7d0;
+$color4: #171717;
+$color5: #13a76b;
+$color6: #e5dada;
+$color7: #fff;
+$color8: #ff652f;
+$color9: #747474;
+$color10: #096643;
+$color11: #555f33;
+$color12: rgba(0,0,0,0.4);
+
+///* FONTS ----------------------------------------------------------*/
+%fonts-common{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $color4;
+}
+%fonts-subtitles{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color1;
+}
+%fonts-titles{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 200;
+    line-height: 26px;
+    color: $color9;
+    margin:0;
+    padding:0;
+}
+%fonts-shout{
+    @extend %fonts-titles;
+    font-weight: 800;
+    color: $color4;
+}
+%fonts-caption-title{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 32px;
+    font-weight: 400;
+    margin:0;
+    padding:0;
+}
+h2{ //section titles
+    @extend %fonts-titles;
+}
+h3{ //section subtitles
+    @extend %fonts-caption-title;
+    color: $color1;
+    text-align: left;
+}
+.shout{ //A subtitle font written in Fredericka, meant for captions of tables and graphics
+    margin: 35px 0;
+    @extend %fonts-shout;
+    span:nth-child(1){
+        color: $color9;
+    }
+    span:nth-child(2){
+        color: $color7;
+        font-size: 2em;
+        position: relative;
+        top: 0.2em;
+    }
+    span:nth-child(3){
+        color: $color5;
+    }
+}
+a{ //basic link
+    @extend %fonts-common;
+    font-weight: 800;
+    box-sizing: border-box;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+a:hover{
+    background-color: $color12;
+    //outline: 2px solid $color12;
+}
+/* UNIVERSALS AND CLEANUP ---------------------------------------------------------*/
+html, body{
+    margin: 0;
+    padding: 0;
+    @extend %fonts-common;
+}
+body{
+    //background-image: $bg-image;
+    //background-color: $color2;
+}
+#background-parallax{
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: -1;
+    width:100vw;
+    height:100vh;
+    background-image: $bg-image;
+    background-color: $color2;
+}
+%containers{    
+    width: $container-width;
+    margin: 0 auto;
+}
+
+/* SECTIONS AND BUILDING BLOCKS ----------------------------------------------------*/
+section{ //Each section is a "page" (about-me, portfolio, etc)
+    @extend %containers;
+    box-sizing: border-box;
+    background-color: lighten( $color3, 20%);
+    min-height: calc( 100vh - 60px );
+    padding: 0;//*10px*/
+    margin: 0 auto;
+}
+.styleone{ //This would be a "subsection", visually differentiating blocks of content
+    background-color: $color6;
+    padding: 26px $base-padding;
+    h2{
+        color: $color5;
+    }
+}
+.styletwo{ //This would be a "subsection", visually differentiating blocks of content
+    background-color: $color7;
+    padding: 26px $base-padding;
+    h2{
+        color: $color5;
+    }
+}
+.stylethree{ //This would be a "subsection", visually differentiating blocks of content
+    background-color: $color5;
+    padding: 26px $base-padding;
+    h2{
+        color: $color7;
+    }
+}
+
+/* GREETING (loading page) ---------------------------------------------------------*/
+#greeting{
+    height: 100vh;
+    width: 100vw;
+    background-color: $color2;
+    position: relative;
+    
+    p{
+        margin: 85px 0 0;
+        padding:0;
+        font-size: 40px;
+        color: $color3;
+        font-family: 'Fredericka the Great', cursive;
+        font-size: 36px;
+        /*span{
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+        }
+        span:first-child{
+            animation-name: span1-anim;
+        }
+        span:nth-child(2){
+            animation-name: span2-anim;
+        }
+        span:last-child{
+            animation-name: span3-anim;
+        }*/
+    }
+}
+.loader{
+    height: 100vh;
+    width: 100vw;
+    background-image: $load-image;
+    background-color: $color2;
+    background-position: right;
+    position: absolute;
+    /*animation-name: loading;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;*/
+}
+.load_anim{
+    position: relative;
+    text-align: center;
+    padding-top: calc( 50vh - 60px );
+}
+.jumper-align{
+    position: absolute;
+    left:50%;
+}
+.load_jumper{
+    height: 65px;
+    width: 65px;
+    background-color: $color3;
+    margin: 0 auto;
+    position:relative;
+    left:-50%;
+    /*animation-name: jump-square;
+    animation-delay: 0.5s;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;*/
+}
+.load_jumper_shadow{
+    height: 30px;
+    width: 75px;
+    background-color: black;
+    opacity: 0.3;
+    margin: 0 auto;
+    position: relative;
+    bottom:-80px;
+    /*animation-name: jump-shadow;
+    animation-delay: 0.5s;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 3;*/
+}
+
+/* HEADER (nav bar) -----------------------------------------------------------*/
+header {
+    background-color: $color4;
+    div{
+        display: none;
+        height: 60px;
+        @extend %containers;
+        box-sizing: border-box;
+        padding-left: $base-padding;
+        padding-right: $base-padding;
+        h1{
+            display: inline-block;
+            margin: 20px 0 0;
+            padding: 0;
+            font-family: 'Fredericka the Great', cursive;
+            font-weight: 400;
+            font-size: 36px;
+            span:first-child{
+                color: $color3;
+            }
+            span:last-child{
+                color: $color5;
+            }
+        }
+    }
+    nav{
+        margin: 0;
+        padding: 0;
+        float: right;
+        
+    }
+    ul {
+        color: $color3;
+        //margin: 27px 0;
+        margin: 12px 0;
+        
+    }
+    li {
+        display: inline-block;
+        position: relative;
+        a{
+            padding: 2px 5px;
+            @extend %fonts-subtitles;
+            color: $color3;
+            margin: 2px 5px;
+            text-decoration: none;
+            border: 2px solid transparent;
+         }
+        a:hover{
+            border: 2px solid $color5;
+            border-radius: 5px;
+        }
+        a.last-item{
+            margin: 2px 0 2px 5px;
+        }
+        a.last-item:hover{
+            border: none;
+            color: $color2;
+        }
+    }
+    li+li::before{
+        content: " ● ";
+    }
+    i{
+        font-size: 2em;
+        position: relative;
+        bottom: -8px;
+        //border: 1px yellow solid;
+    }
+    img{
+        height: 2em;
+        position: relative;
+        bottom: -9px;
+        //bottom: -10px;
+        //border: 1px yellow solid;
+    }
+}
+
+/* ABOUT ME -----------------------------------------------------------------*/
+#about-me{
+    display: none;
+}
+.portrait{
+    width: 26vw;
+    float: right;
+    margin: -36px -6vw 5px 5px;
+    max-width: 512px;
+}
+.contact-list{
+    position: relative;
+    padding: 0;
+    i {
+        display: inline-block;
+        position: relative;
+        font-size: 2em;
+        color: $color12;
+        bottom: -6px;
+        //right: -4px;
+        padding: 0 6px;
+    }
+    li{
+        //margin: 3px;
+        //padding:0 3px;
+        display: inline-block;
+        a{
+            text-decoration: none;
+            color: $color7;
+        }
+    }
+    img{
+        display: inline-block;
+        position: relative;
+        width: 2em;
+        bottom: -6px;
+        padding: 0 4px 0 0;
+        opacity: 0.4;
+    }
+}
+.contact-list+p{
+    color: $color7;
+    margin-bottom: 3vh;
+    span{
+        font-weight: 500;
+    }
+    
+}
+
+/* FOOTER ---------------------------------------------------------------*/
+footer>nav{
+    display: none;
+    height: 60px;
+    width: 100vw;
+    background-color: $color1;
+    color: $color3;
+    position: fixed;
+    bottom:0;
+    font-size: 12px;
+    z-index: 3;
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+        display: inline-block;
+        position: relative;
+            a{
+                padding: 2px 5px;
+                @extend %fonts-subtitles;
+                color: $color3;
+                margin: 2px 5px;
+                text-decoration: none;
+                border: 2px solid transparent;
+                i{
+                    font-size: 2em;
+                    position: relative;
+                    bottom: -8px;
+                }
+                img{
+                    height: 2em;
+                    position: relative;
+                    bottom: -9px;
+                }
+            }
+            a:hover{
+            border: 2px solid $color5;
+            border-radius: 5px;
+            }
+            a.last-item{
+                margin: 2px 0 2px 5px;
+            }
+            a.last-item:hover{
+                border: none;
+                color: $color2;
+            }
+        }
+        /*li+li::before{
+            content: "|";
+        }*/
+    }
+}
+
+
+/* TABLES ---------------------------------------------------------------*/
+@import "table";
+
+/* ANIMATIONS -----------------------------------------------------------*/
+@import "anim";
+
+/* MEDIA QUERIES --------------------------------------------------------*/
+@import "mediaqueries";

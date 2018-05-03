@@ -1,0 +1,46 @@
+{
+	"courses": [{
+			"specialization": "Web Applications for Everybody",
+			"institution": "University of Michigan",
+			"hours": 190,
+			"courses": [
+				"Building Web Applications in PHP",
+				"Introduction to Structured Query Language (SQL)",
+				"Building Database Applications in PHP",
+				"JavaScript, jQuery, and JSON"
+			]
+		},
+		{
+			"specialization": "Web Design for Everybody",
+			"institution": "University of Michigan",
+			"hours": 70,
+			"courses": [
+				"Introduction to HTML5",
+				"Introduction to CSS3",
+				"Interactivity with JavaScript",
+				"Advanced Styling with Responsive Design",
+				"-Web Design for Everybody Capstone"
+			]
+		},
+		{
+			"specialization": "freeCodeCamp Certification",
+			"institution": "freeCodeCamp",
+			"hours": 470,
+			"courses": [
+				"Front End Developer"
+			]
+		},
+		{
+			"specialization": "Full Stack Web and Multiplatform Mobile App Development",
+			"institution": "Hong Kong University",
+			"hours": 140,
+			"courses": [
+				"-Front-End Web UI Frameworks and Tools: Bootstrap 4",
+				"-Front-End JavaScript Frameworks: Angular",
+				"-Multiplatform Mobile App Development with Web Technologies: Ionic and Cordova",
+				"-Multiplatform Mobile App Development with NativeScript",
+				"-Server-side Development with NodeJS, Express and MongoDB"
+			]
+		}
+	]
+}
