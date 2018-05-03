@@ -1,5 +1,7 @@
 /* All CSS animation is concentrated on this file in order to facilitate fine tuning. The drawback is that the selectors below are replicated in the main css (style.css), although not thr rules.*/
 
+$transition_time: 0.4s;
+
 /* ELEMENTS ---------------------------*/
 #greeting{
     p{
@@ -37,6 +39,19 @@
     animation-timing-function: ease-out;
     animation-iteration-count: 3;
 }
+footer>nav{
+    transition-property: bottom;
+    transition-duration: $transition_time;
+}
+header nav{
+    transition-property: top;
+    transition-duration: $transition_time;
+}
+.final_section{
+    transition-property: height;
+    transition-duration: $transition_time;
+}
+
 
 /* ANIMATIONS ---------------------------*/
 $w: 65px;

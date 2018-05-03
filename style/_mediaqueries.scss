@@ -1,10 +1,13 @@
 
 @media only screen and (max-width: 812px) {
-    header nav>ul {
-        display:none;
+    header nav {
+        top: -200px;
+        //position: absolute;
     }
     footer nav{
-        display:block;
-        text-align: center;
+        bottom: 0;
+    }
+    .final_section{
+        height: 60px;
     }
 }

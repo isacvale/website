@@ -154,6 +154,7 @@ section{ //Each section is a "page" (about-me, portfolio, etc)
     width: 100vw;
     background-color: $color2;
     position: relative;
+    z-index:10;
     
     p{
         margin: 85px 0 0;
@@ -230,6 +231,7 @@ header {
     background-color: $color4;
     div{
         display: none;
+        position: relative;
         height: 60px;
         @extend %containers;
         box-sizing: border-box;
@@ -253,13 +255,18 @@ header {
     nav{
         margin: 0;
         padding: 0;
-        float: right;
+        //float: right;
+        display: inline-block;
+        position: absolute;
+        right: 4vw;
+        top:0;
+        //z-index: 1000;
         
     }
     ul {
         color: $color3;
         //margin: 27px 0;
-        margin: 12px 0;
+        margin: 27px 0;
         
     }
     li {
@@ -289,9 +296,9 @@ header {
         content: " ● ";
     }
     i{
-        font-size: 2em;
+        font-size: 1.6em;
         position: relative;
-        bottom: -8px;
+        bottom: 0;//-8px;
         //border: 1px yellow solid;
     }
     img{
@@ -351,21 +358,25 @@ header {
     }
     
 }
-
+.final_section{
+    width:100%;
+    height:0;
+}
 /* FOOTER ---------------------------------------------------------------*/
 footer>nav{
-    display: none;
+    //display: none;
     height: 60px;
     width: 100vw;
-    background-color: $color1;
+    background-color: $color4;
     color: $color3;
     position: fixed;
-    bottom:0;
+    bottom:-60px;
     font-size: 12px;
     z-index: 3;
+    text-align: center;
     ul{
         list-style-type: none;
-        margin: 0;
+        margin: 4px 0 0;
         padding: 0;
         li {
         display: inline-block;
@@ -383,7 +394,7 @@ footer>nav{
                     bottom: -8px;
                 }
                 img{
-                    height: 2em;
+                    height: 2.3em;
                     position: relative;
                     bottom: -9px;
                 }

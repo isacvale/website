@@ -51,7 +51,6 @@ h3 {
 
 a {
   font-weight: 800;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 3px 8px;
   border-radius: 3px; }
@@ -80,7 +79,6 @@ section, header div {
 
 /* SECTIONS AND BUILDING BLOCKS ----------------------------------------------------*/
 section {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-color: white;
   min-height: calc( 100vh - 60px );
@@ -110,7 +108,8 @@ section {
   height: 100vh;
   width: 100vw;
   background-color: #ffe401;
-  position: relative; }
+  position: relative;
+  z-index: 10; }
   #greeting p {
     margin: 85px 0 0;
     padding: 0;
@@ -184,8 +183,8 @@ header {
   background-color: #171717; }
   header div {
     display: none;
+    position: relative;
     height: 60px;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding-left: 4vw;
     padding-right: 4vw; }
@@ -203,10 +202,13 @@ header {
   header nav {
     margin: 0;
     padding: 0;
-    float: right; }
+    display: inline-block;
+    position: absolute;
+    right: 4vw;
+    top: 0; }
   header ul {
     color: #f7f7d0;
-    margin: 12px 0; }
+    margin: 27px 0; }
   header li {
     display: inline-block;
     position: relative; }
@@ -227,9 +229,9 @@ header {
   header li + li::before {
     content: " ● "; }
   header i {
-    font-size: 2em;
+    font-size: 1.6em;
     position: relative;
-    bottom: -8px; }
+    bottom: 0; }
   header img {
     height: 2em;
     position: relative;
@@ -274,20 +276,24 @@ header {
   .contact-list + p span {
     font-weight: 500; }
 
+.final_section {
+  width: 100%;
+  height: 0; }
+
 /* FOOTER ---------------------------------------------------------------*/
 footer > nav {
-  display: none;
   height: 60px;
   width: 100vw;
-  background-color: #2d2d2d;
+  background-color: #171717;
   color: #f7f7d0;
   position: fixed;
-  bottom: 0;
+  bottom: -60px;
   font-size: 12px;
-  z-index: 3; }
+  z-index: 3;
+  text-align: center; }
   footer > nav ul {
     list-style-type: none;
-    margin: 0;
+    margin: 4px 0 0;
     padding: 0;
     /*li+li::before{
         content: "|";
@@ -306,7 +312,7 @@ footer > nav {
           position: relative;
           bottom: -8px; }
         footer > nav ul li a img {
-          height: 2em;
+          height: 2.3em;
           position: relative;
           bottom: -9px; }
       footer > nav ul li a:hover {
@@ -326,7 +332,6 @@ footer > nav {
 .table-caption {
   line-height: 90%;
   text-align: center;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -375,7 +380,6 @@ table, tr, th, td {
 table {
   width: 100%;
   empty-cells: show;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px white solid;
   position: relative; }
@@ -429,72 +433,48 @@ table {
 /* All CSS animation is concentrated on this file in order to facilitate fine tuning. The drawback is that the selectors below are replicated in the main css (style.css), although not thr rules.*/
 /* ELEMENTS ---------------------------*/
 #greeting p span {
-  -webkit-animation-duration: 3s;
   animation-duration: 3s;
-  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out; }
 #greeting p span:first-child {
-  -webkit-animation-name: span1-anim;
   animation-name: span1-anim; }
 #greeting p span:nth-child(2) {
-  -webkit-animation-name: span2-anim;
   animation-name: span2-anim; }
 #greeting p span:last-child {
-  -webkit-animation-name: span3-anim;
   animation-name: span3-anim; }
 
 .loader {
-  -webkit-animation-name: loading;
   animation-name: loading;
-  -webkit-animation-duration: 2.8s;
   animation-duration: 2.8s;
-  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out; }
 
 .load_jumper {
-  -webkit-animation-name: jump-square;
   animation-name: jump-square;
-  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
-  -webkit-animation-duration: 0.6s;
   animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: 3;
   animation-iteration-count: 3; }
 
 .load_jumper_shadow {
-  -webkit-animation-name: jump-shadow;
   animation-name: jump-shadow;
-  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
-  -webkit-animation-duration: 0.6s;
   animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
-  -webkit-animation-iteration-count: 3;
   animation-iteration-count: 3; }
+
+footer > nav {
+  transition-property: bottom;
+  transition-duration: 0.4s; }
+
+header nav {
+  transition-property: top;
+  transition-duration: 0.4s; }
+
+.final_section {
+  transition-property: height;
+  transition-duration: 0.4s; }
 
 /* ANIMATIONS ---------------------------*/
 /*Animation: loading bar*/
-@-webkit-keyframes loading {
-  0% {
-    width: 0; }
-  46% {
-    width: 0vw; }
-  56% {
-    width: 33vw; }
-  63% {
-    width: 33vw; }
-  73% {
-    width: 66vw; }
-  80% {
-    width: 66vw; }
-  90% {
-    width: 100vw; }
-  /*95% {width:60vw;}*/
-  100% {
-    width: 100vw; } }
 @keyframes loading {
   0% {
     width: 0; }
@@ -514,30 +494,6 @@ table {
   100% {
     width: 100vw; } }
 /*Animation: jumping square*/
-@-webkit-keyframes jump-square {
-  0% {
-    bottom: 0; }
-  10% {
-    width: 80px;
-    height: 50px;
-    bottom: 0; }
-  45% {
-    width: 50px;
-    height: 80px;
-    bottom: 70px;
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in; }
-  80% {
-    width: 50px;
-    height: 80px;
-    bottom: 0; }
-  90% {
-    width: 80px;
-    height: 50px; }
-  100% {
-    width: 65px;
-    height: 65px;
-    bottom: 0; } }
 @keyframes jump-square {
   0% {
     bottom: 0; }
@@ -549,7 +505,6 @@ table {
     width: 50px;
     height: 80px;
     bottom: 70px;
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in; }
   80% {
     width: 50px;
@@ -563,44 +518,17 @@ table {
     height: 65px;
     bottom: 0; } }
 /*Animation: shadow from jumping*/
-@-webkit-keyframes jump-shadow {
-  10% {
-    width: 75px; }
-  45% {
-    width: 25px;
-    -webkit-animation-timing-function: ease-in;
-    animation-timing-function: ease-in; }
-  80% {
-    width: 25px; }
-  90% {
-    width: 75px; } }
 @keyframes jump-shadow {
   10% {
     width: 75px; }
   45% {
     width: 25px;
-    -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in; }
   80% {
     width: 25px; }
   90% {
     width: 75px; } }
 /*Animation: color correction*/
-@-webkit-keyframes span1-anim {
-  0% {
-    color: #2d2d2d;
-    font-size: 0px;
-    opacity: 0; }
-  35% {
-    font-size: 0px;
-    opacity: 0; }
-  40% {
-    font-size: 52px;
-    opacity: 1.0; }
-  45% {
-    color: #2d2d2d;
-    font-size: 40px;
-    opacity: 1.0; } }
 @keyframes span1-anim {
   0% {
     color: #2d2d2d;
@@ -614,22 +542,6 @@ table {
     opacity: 1.0; }
   45% {
     color: #2d2d2d;
-    font-size: 40px;
-    opacity: 1.0; } }
-@-webkit-keyframes span2-anim {
-  0% {
-    color: #2d2d2d;
-    font-size: 0px;
-    opacity: 0; }
-  45% {
-    color: #2d2d2d; }
-  63% {
-    font-size: 0px;
-    opacity: 0; }
-  67% {
-    font-size: 52px;
-    opacity: 1.0; }
-  71% {
     font-size: 40px;
     opacity: 1.0; } }
 @keyframes span2-anim {
@@ -648,19 +560,6 @@ table {
   71% {
     font-size: 40px;
     opacity: 1.0; } }
-@-webkit-keyframes span3-anim {
-  0% {
-    font-size: 0px;
-    opacity: 0; }
-  80% {
-    font-size: 0px;
-    opacity: 0; }
-  84% {
-    font-size: 52px;
-    opacity: 1.0; }
-  88% {
-    font-size: 40px;
-    opacity: 1.0; } }
 @keyframes span3-anim {
   0% {
     font-size: 0px;
@@ -675,13 +574,6 @@ table {
     font-size: 40px;
     opacity: 1.0; } }
 /*Animation: section load*/
-@-webkit-keyframes section-appear {
-  from {
-    opacity: 0;
-    background-color: white; }
-  to {
-    opacity: 1;
-    background-color: blue; } }
 @keyframes section-appear {
   from {
     opacity: 0;
@@ -691,9 +583,13 @@ table {
     background-color: blue; } }
 /* MEDIA QUERIES --------------------------------------------------------*/
 @media only screen and (max-width: 812px) {
-  header nav > ul {
-    display: none; }
+  header nav {
+    top: -200px; }
 
   footer nav {
-    display: block;
-    text-align: center; } }
+    bottom: 0; }
+
+  .final_section {
+    height: 60px; } }
+
+/*# sourceMappingURL=style.css.map */
